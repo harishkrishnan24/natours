@@ -16,7 +16,7 @@ const filterObj = (obj, ...allowedFields) => {
 exports.getAllUsers = factory.getAll(User);
 
 exports.getMe = (req, res, next) => {
-  req.params.id = req,user.id;
+  (req.params.id = req), user.id;
   next();
 };
 
@@ -38,6 +38,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     status: 'success',
     data: {
       user: updatedUser
+    }
   });
 });
 
